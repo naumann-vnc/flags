@@ -1,0 +1,42 @@
+$(function(){
+    const tbody = $('.table tbody');
+
+    function obterDados(){
+
+        $.ajax('http://jsonplaceholder.typicode.com/users', {
+            type: 'GET',
+            beforeSend: function(){
+                $('.table').after('<p class="loading"> carregando ... </p>')
+            },
+            error: function(){
+                $('.table').after('<p class="loading"> deu ruim </p>')
+            },
+            success: function(dados) {
+                mostrarDados(dados);
+            },
+            complete: function () {
+                $('.loading').remove();
+            }
+        })
+
+        function mostrarDados(dados) {
+            $.each(dados, function(i, el) {
+                tbody.append(`<tr>
+                                <th scope="row">${el.id}</th>
+                                <td>${el.name}</td>
+                                <td>${el.username}</td>
+                                <td>${el.email}</td>
+                            </tr>
+                `)
+            })
+        }
+
+        // $.get('http://jsonplaceholder.typicode.com/users/', function(dados){
+        //     console.log(dados);
+        // }) // da mesma forma que tenho o get tambem tenho o .post, internamente o .ajax o jquery chama o post e get
+
+
+    }
+
+    obterDados();
+});
