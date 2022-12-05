@@ -10,10 +10,11 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Document</title>
     <script src="js/api_control.js"></script>
+    <link rel="stylesheet" href="faqs.css">
 
 </head>
 
-<body class="text-center">
+<body>
     <header>
         <div class="px-3 py-2 text-bg-dark">
             <div class="container">
@@ -41,7 +42,6 @@
                                 FAQs
                             </a>
                         </li>
-
                         <li id="signup_btn">
                             <a href="#" class="col nav-link text-white">
                                 <div class="row">
@@ -62,53 +62,30 @@
             </div>
         </div>
     </header>
-    
-    <div class="container-sm col-3" style="margin-top:5em;">
-
-        <form id="signup_form" class="form-signup w-100 m-auto needs-validation" novalidate>
-            <h1 class="h3 mb-3 fw-normal">Sign up</h1>
-            <div class="form-floating" style="margin-bottom: 1em;">
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                <label for="login">Email address</label>
+    <div class="container" style="margin-top: 3em;">
+        <div class="card">
+            <h5 class="card-header">Como jogar?</h5>
+            <div class="card-body">
+                <p class="card-text">Apenas clique no botão do menu inicial para iniciar um jogo.</p>
             </div>
-            <div class="form-floating" style="margin-bottom: 1em;">
-                <input type="text" class="form-control" id="name" placeholder=""required>
-                <label for="name">Name</label>
-            </div>
-            <div class="form-floating" style="margin-bottom: 1em;">
-                <input type="text" class="form-control" id="phone-number" placeholder=""required>
-                <label for="phone-number">Phone number</label>
-            </div>
-            <div class="form-floating" style="margin-bottom: 1em;">
-                <input type="password" class="form-control" id="password" placeholder="Password"required>
-                <label for="password">Password</label>
-            </div>
-
-            <button class="w-100 btn btn-lg btn-primary" type="submit" id="btn_signup">Sign in</button>
-        </form >
-
+        </div>
     </div>
-
-
+    <div class="container" style="margin-top: 3em;">
+        <div class="card">
+            <h5 class="card-header">Quantas tentativas posso errar no jogo?</h5>
+            <div class="card-body">
+                <p class="card-text">Quantas você conseguir, não existe penalidade para erros.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 3em;">
+        <div class="card">
+            <h5 class="card-header">Quando a página de ranking ficará disponível?</h5>
+            <div class="card-body">
+                <p class="card-text">Estamos planejando uma atualização para o dia 31 de fevereiro.</p>
+            </div>
+        </div>
+    </div>
 </body>
-<script>
-    (() => {
-  'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-</script>
 </html>

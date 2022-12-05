@@ -49,9 +49,8 @@
                                 d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z" />
                         </svg>
                     </a>
-
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                        <li>
+                        <li id="home_btn">
                             <a href="#" class="col nav-link text-secondary">
                                 <div class="row">
 
@@ -64,7 +63,7 @@
                                 Home
                             </a>
                         </li>
-                        <li>
+                        <li id="faqs_btn">
                             <a href="#" class="col nav-link text-white">
                                 <div class="row">
 
@@ -93,14 +92,52 @@
                                 Sign out
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </div>
-
         </div>
     </header>
-    <h1 id="test">123</h1>
+    <div class="container" style="margin-top: 2em;">
+        <div class="col-lg-12 col-xl-8">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Relatório</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-6 col-lg-3">
+                            <div class="border-success border rounded text-center py-3 mb-3">
+                                <h5 class="card-title text-success mb-1">Acertos</h5>
+                            </div>
+                            <div class="border-danger border rounded text-center py-3 mb-3">
+                                <h5 class="card-title text-danger mb-1">Erros</h5>
+                            </div>
+                            <div class="border-scondary border rounded text-center py-3">
+                                <h5 class="card-title text-scondary mb-1">Tentativas</h5>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-9">
+                            <p><span id="progress_label_hits" class="float-right">0%</span></p>
+                            <div class="progress mb-3" style="height: 5px;">
+                                <div id="progress_hits" class="progress-bar bg-success" role="progressbar" style="width: 0%;"
+                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><span id="progress_label_misses" class="float-right">0%</span></p>
+                            <div class="progress mb-3" style="height: 5px;">
+                                <div id="progress_misses" class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><span id="attempt_label" class="float-right">0</span></p>
+                            <div class="progress" style="height: 5px;">
+                                <div class="progress-bar bg-scondary" role="progressbar" style="width: 100%;"
+                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <hr style="margin-top: 3em;">
     <div class="container">
         <footer class="py-5 row">

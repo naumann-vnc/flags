@@ -99,7 +99,7 @@ $(function () {
             scorePoint($(this).attr('id'));
         });
         console.log(getCookie('email'));
-        
+
         function setProgress(value) {
             score += value;
             $("#progress-bar").css("width", score + '%');
@@ -126,7 +126,7 @@ $(function () {
                 //console.log($('#' + btn).attr('alt'));
                 jsonData['hit'] += 1;
                 jsonData['attempts'] += 1;
-                setProgress(+100);
+                setProgress(+10);
             } else {
                 jsonData['miss'] += 1;
                 jsonData['attempts'] += 1;
