@@ -111,7 +111,7 @@ $(function () {
             //console.log(data.access_token);
             //console.log(apiCall("/auth", "POST", login_info, data.access_token).status);
             console.log('hits:', data[0].hit);
-            
+
             $("#attempt_label").text(function( index ) {
                 return data[0].attempts;
             });
@@ -126,7 +126,7 @@ $(function () {
             ;$("#progress_label_misses").text(function( index ) {
                 return miss_p +'%';
             });
-            
+
             //return data;
         } catch (error) {
             console.log('Error:', error);
@@ -164,11 +164,13 @@ $(function () {
     }
     $(document).ready(function () {
         console.log(getCookie('email'));
-        jsonObj = { "email": getCookie('email') };
-        console.log(JSON.stringify(jsonObj));
-        jsonObj = JSON.stringify(jsonObj);
-
-        show_score(jsonObj);
+        jsonObj = { "email": "admin" };
+        //if (getCookie('email')) {
+            //jsonObj = { "email": getCookie('email') };
+            console.log(JSON.stringify(jsonObj));
+            jsonObj = JSON.stringify(jsonObj);
+            show_score(jsonObj);
+        //}
         //console.log(getScore('/scores','POST', jsonObj, ''));
         //$("#test").text(function( index ) {
         //    return show_score(jsonObj).hit;
@@ -255,7 +257,7 @@ $(function () {
                 obj[this.id] = $(this).val();
             })
             var json = JSON.stringify(obj);
-            
+
             console.log(json);
             create_user(json);
 
